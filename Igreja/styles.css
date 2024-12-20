@@ -1,0 +1,114 @@
+/* Variáveis de cores */
+:root {
+    --background-color: #000000;
+    --text-color: #ffffff;
+    --primary-color: #f4cb43;
+    --secondary-color: #333333;
+    --hover-color: #bd8e17;
+    --border-color: #555555;
+}
+
+/* Reset básico */
+body, h1, h2, p, ul, li, button {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    padding: 0 15px;
+}
+
+.header {
+    text-align: center;
+    padding: 20px;
+    background-color: var(--primary-color);
+    color: var(--text-color);
+}
+
+.banner {
+    width: 180px;
+    height: 160px;
+    display: block;
+    margin: 0 auto 20px;
+}
+
+.main-content {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background: var(--secondary-color);
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.social-media, .locations {
+    margin-bottom: 20px;
+}
+
+.social-media ul, .locations ul {
+    list-style: none;
+    padding: 0;
+}
+
+.social-media li, .locations li {
+    margin: 10px 0;
+}
+
+.social-media a {
+    text-decoration: none;
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+.social-media a:hover {
+    text-decoration: underline;
+    color: var(--hover-color);
+}
+
+.locations button {
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.locations button:hover {
+    background-color: var(--hover-color);
+}
+
+.address-display {
+    margin-top: 15px;
+    padding: 10px;
+    background-color: var(--secondary-color);
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    font-style: italic;
+}
+
+.footer {
+    text-align: center;
+    padding: 10px;
+    margin-top: 20px;
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    border-radius: 8px;
+}
+
+/* Adaptabilidade para telas menores */
+@media (max-width: 600px) {
+    .main-content {
+        padding: 15px;
+    }
+
+    .locations button {
+        width: 100%;
+    }
+}

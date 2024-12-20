@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Igreja Apostólica Missionária Templo de Sinais</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Estilo básico para o botão da rádio */
+        .radio-button {
+            margin: 20px 0;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .radio-button:hover {
+            background-color: #45a049;
+        }
+
+        /* Esconde o iframe */
+        #radio-player {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <h1>Templo de Sinais</h1>
+        <p>Conecte-se conosco nas redes sociais ou visite uma de nossas igrejas!</p>
+    </header>
+
+    <img src="imagens/001.jpg" alt="Imagem de destaque" class="banner">
+
+    <main class="main-content">
+        <section class="social-media">
+            <h2>Redes Sociais</h2>
+            <ul>
+                <li><a href="https://youtube.com/@igrejaapostolicamissionari7557?si=t7vD51OnIgEyJHZy" target="_blank">YouTube</a></li>
+                <li><a href="https://chat.whatsapp.com/JzUjiBYmAK3F4XQSD9OTjk" target="_blank">WhatsApp</a></li>
+                <li><a href="https://instagram.com" target="_blank">Instagram</a></li>
+                <li><a href="https://linkedin.com" target="_blank">LinkedIn</a></li>
+            </ul>
+        </section>
+
+        <section class="locations">
+            <h2>Nossas Igrejas</h2>
+            <ul>
+                <li><button onclick="showAddress('endereco1')">Igreja de Palmeiras 1</button></li>
+                <li><button onclick="showAddress('endereco2')">Igreja da Casa Branca</button></li>
+                <li><button onclick="showAddress('endereco3')">Igreja de Poá</button></li>
+                <li><button onclick="showAddress('endereco4')">Igreja de Itaqua</button></li>
+            </ul>
+            <div id="address-display" class="address-display"></div>
+        </section>
+
+        <section class="radio-section">
+            <h2>Ouça Nossa Rádio</h2>
+            <button class="radio-button" onclick="toggleRadio()">Ouvir Rádio</button>
+            <iframe id="radio-player" src="https://zeno.fm/player/teste_de_radio" width="300" height="250" frameborder="0" scrolling="no"></iframe>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; Vídeos de teste (vídeo de boas-vindas).</p>
+    </footer>
+
+    <script>
+        function showAddress(id) {
+            const addresses = {
+                endereco1: 'Rua A, 123 - Centro, Cidade X',
+                endereco2: 'Avenida B, 456 - Bairro Y, Cidade Z',
+                endereco3: 'Praça C, 789 - Bairro W, Cidade Q',
+                endereco4: 'Estrada D, 1011 - Centro, Cidade P'
+            };
+            document.getElementById('address-display').textContent = addresses[id] || 'Endereço não encontrado';
+        }
+
+        function toggleRadio() {
+            const radioPlayer = document.getElementById('radio-player');
+            const button = document.querySelector('.radio-button');
+
+            if (radioPlayer.style.display === 'none') {
+                radioPlayer.style.display = 'block'; // Mostra o iframe
+                button.textContent = 'Parar Rádio'; // Altera o texto do botão
+            } else {
+                radioPlayer.style.display = 'none'; // Esconde o iframe
+                button.textContent = 'Ouvir Rádio'; // Altera o texto do botão
+            }
+        }
+    </script>
+</body>
+</html>
